@@ -93,7 +93,7 @@ def print_J():
 def print_K():
     for row in range(7):
         for col in range(7):
-            if col == 0 or row + col == 6 or row - col == 0:
+            if ( col == 0 ) or ( row + col == 4 ) or ( col - row == -2 ):
                 print("*", end=" ")
             else:
                 print(" ", end=" ")
@@ -145,9 +145,9 @@ def print_P():
         print()
 
 def print_Q():
-    for row in range(7):
-        for col in range(7):
-            if ((col == 0 or col == 6) and row not in (0, 6)) or ((row == 0 or row == 6) and 0 < col < 6) or (row == col and row > 3):
+    for row in range(8):
+        for col in range(8):
+            if  ((col == 0 or col == 6) and 0 < row < 6 ) or ((row == 0 or row == 6) and 0 < col < 6) or (row == col and row > 3) or (row == 7 and col == 7):
                 print("*", end=" ")
             else:
                 print(" ", end=" ")
@@ -192,7 +192,7 @@ def print_U():
 def print_V():
     for row in range(7):
         for col in range(7):
-            if (col == row and row < 4) or (row + col == 6 and row < 4) or (row >= 4 and col == 3):
+            if (col + row == 9) or (col - row == -3) or ((col == 0 or col == 6) and row <=3):
                 print("*", end=" ")
             else:
                 print(" ", end=" ")
